@@ -1,0 +1,46 @@
+// -----------------------------------------------------------
+// 1. Utilities
+// -----------------------------------------------------------
+@function em($size) {
+  @return $size / 16 + em;
+}
+
+// -----------------------------------------------------------
+// 2. Breakpoints
+// -----------------------------------------------------------
+
+$breakpoints: (
+  small-up: 576,
+  medium-up: 768,
+  large-up: 992,
+  x-large-up: 1200,
+  small-down: 575,
+  medium-down: 767,
+  large-down: 991,
+  x-large-down: 1199,
+);
+
+@mixin media-up($breakpoint) {
+  $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+  @media (min-width: em($breakpoint-value)) {
+    @content;
+  }
+}
+
+@mixin media-down($breakpoint) {
+  $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+  @media (max-width: em($breakpoint-value)) {
+    @content;
+  }
+}
+
+@mixin media-between($up, $down) {
+  $breakpoint-up: map-get($breakpoints, $up);
+  $breakpoint-down: map-get($breakpoints, $down);
+
+  @media (min-width: em($breakpoint-up)) and (max-width: em($breakpoint-down)) {
+    @content;
+  }
+}
