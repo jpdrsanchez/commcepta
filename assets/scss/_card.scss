@@ -1,0 +1,93 @@
+.card {
+  padding: calc(var(--gutter) * 2);
+  background: var(--card-bg);
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.2);
+
+  @include media-up(small-up) {
+    display: flex;
+    align-items: center;
+  }
+
+  &--hover {
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      background: var(--dark-blue);
+
+      * {
+        color: var(--white);
+      }
+    }
+  }
+
+  &__image {
+    width: 8.75rem;
+    height: 8.75rem;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+
+    @include media-down(small-down) {
+      margin: 0 auto 1.875rem auto;
+    }
+  }
+
+  &__content {
+    @include media-up(small-up) {
+      margin-left: 1.5rem;
+    }
+
+    &--main {
+      @include media-up(small-up) {
+        margin-left: 2.8125rem;
+      }
+    }
+  }
+
+  &__item {
+    font-size: 1.25rem;
+    line-height: 1.2;
+    color: var(--grey);
+    text-transform: uppercase;
+
+    @include media-down(small-down) {
+      text-align: center;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 0.75rem;
+    }
+
+    span {
+      text-transform: initial;
+      color: var(--card-color);
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+  }
+
+  &__title {
+    color: var(--card-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    transition: all 0.3s;
+
+    @include media-down(small-down) {
+      text-align: center;
+    }
+  }
+
+  &__subtitle {
+    color: var(--card-color);
+    font-size: 1.25rem;
+    line-height: 1.2;
+    transition: all 0.3s;
+
+    @include media-down(small-down) {
+      text-align: center;
+    }
+  }
+}

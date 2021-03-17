@@ -1,4 +1,8 @@
 .menu {
+  @include media-down(medium-down) {
+    display: none;
+  }
+
   &__list {
     display: flex;
     align-items: center;

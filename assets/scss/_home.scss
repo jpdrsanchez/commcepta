@@ -1,0 +1,27 @@
+.home-main {
+  padding-top: calc(var(--gutter) * 2);
+  padding-bottom: calc(var(--gutter) * 2);
+
+  &__container {
+    display: grid;
+    gap: calc(var(--gutter) * 2);
+
+    @include media-up(medium-up) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media-up(x-large-up) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__info {
+    @include media-up(medium-up) {
+      grid-column: span 2;
+    }
+
+    @include media-up(x-large-up) {
+      grid-column: span 3;
+    }
+  }
+}

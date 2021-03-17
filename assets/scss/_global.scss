@@ -4,12 +4,16 @@
   --black: #000;
   --light-green: #4dd1d1;
   --dark-green: #092331;
+  --dark-blue: #002b50;
+  --card-color: #092432;
   --header-bg: linear-gradient(
     90deg,
     var(--light-green) 0%,
     var(--dark-green) 100%
   );
   --body-bg: rgba(0, 0, 0, 0.15);
+  --card-bg: #f0f1ef;
+  --grey: #707070;
 
   /* Typography */
   --main-font: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
