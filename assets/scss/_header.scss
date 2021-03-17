@@ -1,0 +1,11 @@
+.header {
+  padding-top: 1.5625rem;
+  padding-bottom: 1.5625rem;
+  background: var(--header-bg);
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

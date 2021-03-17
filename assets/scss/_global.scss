@@ -2,12 +2,21 @@
   /* Colors */
   --white: #fff;
   --black: #000;
+  --light-green: #4dd1d1;
+  --dark-green: #092331;
+  --header-bg: linear-gradient(
+    90deg,
+    var(--light-green) 0%,
+    var(--dark-green) 100%
+  );
+  --body-bg: rgba(0, 0, 0, 0.15);
 
   /* Typography */
-  --main-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --main-font: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 
   /* Units */
+  --container-xxl: 88.125rem; // 1410px
   --container-xl: 71.25rem; // 1140px
   --container-lg: 60rem; // 960px
   --container-md: 45rem; // 720px
@@ -29,6 +38,7 @@ body {
   color: var(--black);
   font-size: 1rem;
   font-family: var(--main-font);
+  background-color: var(--body-bg);
 }
 
 a {
@@ -70,5 +80,9 @@ button {
 
   @include media-up(x-large-up) {
     max-width: var(--container-xl);
+  }
+
+  @include media-up(xx-large-up) {
+    max-width: var(--container-xxl);
   }
 }

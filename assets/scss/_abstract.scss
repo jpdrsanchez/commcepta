@@ -14,10 +14,12 @@ $breakpoints: (
   medium-up: 768,
   large-up: 992,
   x-large-up: 1200,
+  xx-large-up: 1440,
   small-down: 575,
   medium-down: 767,
   large-down: 991,
   x-large-down: 1199,
+  xx-large-down: 1439,
 );
 
 @mixin media-up($breakpoint) {
