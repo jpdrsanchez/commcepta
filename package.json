@@ -1,0 +1,10 @@
+{
+  "name": "selection-test-frontend-commcepta",
+  "version": "1.0.0",
+  "description": "Teste de frontend da empresa commcepta",
+  "main": "index.js",
+  "repository": "https://github.com/jpdrsanchez/teste-commcepta.git",
+  "author": "João Pedro Sanchez",
+  "license": "MIT",
+  "private": false
+}
