@@ -21,13 +21,6 @@ const getData = () => {
       `;
     };
 
-    const handleClick = (event) => {
-      const theElement = event.currentTarget;
-      const data = getMainCardInfo(theElement);
-      setMainCardInfo(data);
-      window.scrollTo(0, 0);
-    };
-
     const createTemplate = (data) => {
       const element = document.createElement('article');
       element.classList.add('card');
@@ -70,11 +63,22 @@ const getData = () => {
       const elements = wrapper.querySelectorAll('.card--hover');
       const [fristElement] = elements;
 
+      fristElement.classList.add('active');
       const data = getMainCardInfo(fristElement);
       setMainCardInfo(data);
 
       elements.forEach((element) => {
-        element.addEventListener('click', handleClick);
+        element.addEventListener('click', (event) => {
+          elements.forEach((element) => {
+            element.classList.remove('active');
+          });
+
+          const theElement = event.currentTarget;
+          theElement.classList.add('active');
+          const data = getMainCardInfo(theElement);
+          setMainCardInfo(data);
+          window.scrollTo(0, 0);
+        });
       });
     };
 
