@@ -1,2 +1,2 @@
-import showInConsole from './modules/example';
-showInConsole('Tudo funcionando');
+import getData from './modules/getData';
+getData();
