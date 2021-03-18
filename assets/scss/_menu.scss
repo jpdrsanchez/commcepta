@@ -1,22 +1,112 @@
 .menu {
   @include media-down(medium-down) {
     display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 100%;
+    z-index: 999;
+  }
+
+  &.active {
+    @include media-down(medium-down) {
+      display: flex;
+      opacity: 0;
+      animation: menuMobile 0.3s forwards;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.25rem;
+    height: 1.25rem;
+    background: none;
+    border: none;
+    padding: 0;
+    appearance: none;
+    position: relative;
+    z-index: 1000;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      outline: none;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 0.125rem;
+      background-color: var(--white);
+      box-shadow: 0 0.3125rem var(--white), 0 -0.3125rem var(--white);
+      transition: all 0.3s;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 0.125rem;
+      background-color: var(--white);
+      position: absolute;
+      transition: all 0.3s;
+    }
+
+    &.active {
+      &::before {
+        transform: rotate(45deg);
+        box-shadow: none;
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+
+    @include media-up(medium-up) {
+      display: none;
+    }
   }
 
   &__list {
-    display: flex;
-    align-items: center;
+    @include media-up(medium-up) {
+      display: flex;
+      align-items: center;
+    }
   }
 
   &__item {
     &:not(:last-child) {
-      margin-right: 3.75rem;
+      @include media-down(medium-down) {
+        margin-bottom: 1.875rem;
+      }
+
+      @include media-up(medium-up) {
+        margin-right: 3.75rem;
+      }
     }
   }
 
   &__link {
+    display: block;
     color: var(--white);
     font-size: 1.5rem;
     text-transform: uppercase;
+    text-align: center;
+  }
+}
+
+@keyframes menuMobile {
+  to {
+    opacity: 1;
   }
 }

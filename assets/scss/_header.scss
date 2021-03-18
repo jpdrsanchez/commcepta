@@ -8,4 +8,11 @@
     align-items: center;
     justify-content: space-between;
   }
+
+  &__link {
+    @include media-down(small-down) {
+      width: 100%;
+      max-width: 11.25rem;
+    }
+  }
 }

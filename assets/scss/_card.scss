@@ -34,6 +34,32 @@
     }
   }
 
+  &__photo-wrapper {
+    position: relative;
+
+    @include media-down(small-down) {
+      margin: 0 auto 1.875rem auto;
+      width: 8.75rem;
+      height: 8.75rem;
+    }
+
+    & > div {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      background: var(--light-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #092432;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+  }
+
   &__image {
     width: 8.75rem;
     height: 8.75rem;

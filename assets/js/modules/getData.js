@@ -30,7 +30,10 @@ const getData = () => {
         `{"foto": "${data.foto}", "nome": "${data.nome}", "cargo": "${data.cargo}", "idade": "${data.idade}"}`,
       );
       element.innerHTML = `
-        <img src="./assets/images/${data.foto}" alt="${data.nome}" class="card__image">
+        <div class="card__photo-wrapper">
+          <img src="./assets/images/${data.foto}" alt="${data.nome}" class="card__image">
+          <div>${data.id}</div>
+        </div>
         <div class="card__content">
           <h1 class="card__title">${data.nome}</h1>
           <h2 class="card__subtitle">${data.cargo}</h2>
