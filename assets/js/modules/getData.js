@@ -25,6 +25,7 @@ const getData = () => {
       const theElement = event.currentTarget;
       const data = getMainCardInfo(theElement);
       setMainCardInfo(data);
+      window.scrollTo(0, 0);
     };
 
     const createTemplate = (data) => {
