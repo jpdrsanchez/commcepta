@@ -8,6 +8,11 @@
     align-items: center;
   }
 
+  & > .animation {
+    opacity: 0;
+    animation: showCard 0.3s forwards;
+  }
+
   &--hover {
     cursor: pointer;
     transition: all 0.3s;
@@ -97,5 +102,11 @@
     @include media-down(small-down) {
       text-align: center;
     }
+  }
+}
+
+@keyframes showCard {
+  to {
+    opacity: 1;
   }
 }

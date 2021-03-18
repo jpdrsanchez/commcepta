@@ -10,8 +10,8 @@ const getData = () => {
 
     const setMainCardInfo = (data) => {
       mainCard.innerHTML = `
-        <img src="./assets/images/${data.foto}" alt="${data.nome}" class="card__image">
-        <div class="card__content card__content--main">
+        <img src="./assets/images/${data.foto}" alt="${data.nome}" class="card__image animation">
+        <div class="card__content card__content--main animation">
           <ul class="card__list">
             <li class="card__item">Nome: <span>${data.nome}</span></li>
             <li class="card__item">Cargo: <span>${data.cargo}</span></li>
